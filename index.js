@@ -5,7 +5,10 @@ const dotenv = require("dotenv");
 const etNewsRoutes = require('./routes/etNewRoutes');
 const app = express();
 
-app.use(cors());
+app.use(cors({
+    origin: 'dev-economic-technology-club.vercel.app'
+}
+));
 app.use(cookieParser());
 app.use(express.json());
 app.use(etNewsRoutes);
@@ -25,4 +28,5 @@ const PORT = 3000;
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
 });
+
 
